@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :require_signed_in!, only: [:edit]
+  before_action :require_signed_out!, only: [:create, :new]
+  
   def new
     @user = User.new
   end
