@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = current_user
+    @post = @user.posts.build
   end
 
   def edit

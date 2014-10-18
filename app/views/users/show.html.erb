@@ -1,2 +1,9 @@
-<h1>Users#show,</h1>
-<p>Find me in app/views/users/show,.html.erb</p>
+<%= form_for [@user, @post] do |f| %>
+  <%= f.label :post_title %>
+  <%= f.text_field :title %><br />
+  
+  <%= f.label :post_body %>
+  <%= f.text_field :body %><br />
+  
+  <%= f.submit %><br />
+<% end %>

@@ -5,8 +5,10 @@ class User < ActiveRecord::Base
   
   before_validation :ensure_session_token
   
-  def self.find_by_credentials(username, password)
-    user = User.find_by(username: username)
+  has_many :posts, class_name: :Post, foreign_key: :author_id
+  
+  def self.find_by_credentials(email, password)
+    user = User.find_by(email: email)
     user.try(:is_password?, password) ? user : nil
   end
   

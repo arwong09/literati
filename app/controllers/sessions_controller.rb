@@ -3,15 +3,15 @@ class SessionsController < ApplicationController
   end
   
   def create
-    username = params[:user][:username]
+    email = params[:user][:email]
     password = params[:user][:password]
-    @user = User.find_by_credentials(username, password)
+    @user = User.find_by_credentials(email, password)
     
     if @user
       login!(@user)
-      redirect_to :back
+      redirect_to user_url(@user)
     else
-      @user = User.new(username: username, password: password)
+      @user = User.new(email: email, password: password)
       
       if @user.save
         login!(@user)
@@ -29,6 +29,6 @@ class SessionsController < ApplicationController
   end
   
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:email, :password)
   end
 end
