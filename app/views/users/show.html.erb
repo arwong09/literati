@@ -1,9 +1,16 @@
-<%= form_for [@user, @post] do |f| %>
-  <%= f.label :post_title %>
-  <%= f.text_field :title %><br />
+<%= @user.username %>
+<%= @user.first_name %>
+<%= @user.last_name %>
+
+<%= form_for @user do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %><br />
   
-  <%= f.label :post_body %>
-  <%= f.text_field :body %><br />
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %><br />
+  
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %><br />
   
   <%= f.submit %><br />
 <% end %>
