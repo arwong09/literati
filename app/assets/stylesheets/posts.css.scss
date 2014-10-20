@@ -20,4 +20,31 @@ html, body {
 .feed__sidebar {
   height: 100%;
   background-color: $green;
+  
+  .profile {
+    i {
+      font-size: 80px;
+    }
+    
+    text-align: center;
+    width: 80%;
+    margin: auto;
+  }
+}
+
+.post--new {
+  textarea {
+    min-height: 300px;
+  }
+  .note {
+    float: left;
+    font-style: italic;
+    color: $grayCC;
+    
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
 }

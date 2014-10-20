@@ -10,15 +10,11 @@
     <div class="feed__post">
       <h2><%= post.title %></h2>
       <h4><%= time_ago_in_words(post.created_at) %> ago</h4>
-      <p><%= post.body %></p>
+      <p><%= post.body.html_safe %></p>
     </div>
   <% end %>
 </div>
 
 <div class="col-xs-3 feed__sidebar">
-  <% if current_user %>
-    <%= link_to "new post", new_user_post_url(current_user) %>
-  <% else %>
-    <%= link_to "sign in", new_session_url %>
-  <% end %>
+  <%= render partial: "sidebar", locals: {user: current_user} %>
 </div>

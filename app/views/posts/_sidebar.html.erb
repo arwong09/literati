@@ -1,0 +1,11 @@
+<% if user %>
+  <%= link_to icon('pencil'), new_user_post_url(user) %>
+  <%= link_to icon('smile-o'), session_url, method: "delete" %>
+  <div class="profile">
+    <%= icon('user') %>
+    <h3><%= user.first_name %> <%= user.last_name %></h3>
+  </div>
+  <%= link_to "new post", new_user_post_url(user) %>
+<% else %>
+  <%= link_to "sign in", new_session_url %>
+<% end %>
