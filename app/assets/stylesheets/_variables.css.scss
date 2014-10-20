@@ -1,4 +1,14 @@
 $gray37: #373737;
 $grayCC: #cccccc;
 $grayEE: #eeeeee;
-$green: #4c9689;  
+$white: #ffffff;
+
+$green: #4c9689;
+
+$iconImage: "\f1c5";
+
+@mixin hide-scrollbar {
+  &::-webkit-scrollbar { 
+      display: none; 
+  }
+}  
