@@ -34,6 +34,25 @@ html, body {
     .avatar {
       font-size: 80px;
       
+      i {
+        position: absolute;
+        border-radius: 2px;
+        background-color: $white;
+        color: $green;
+        padding: 3px 6px;
+        opacity: .6;
+        display: none;
+        font-size: 24px;
+        
+        &:hover {
+          display: inline-block;
+        }
+      }
+      
+      &:hover > i {
+        display: inline-block;
+      }
+      
       input {
         display: none;
       }
