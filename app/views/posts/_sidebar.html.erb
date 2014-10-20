@@ -11,7 +11,7 @@
       <% end %>
       <%= form_for user, html: { class: "avatar-form" } do |f| %>
         <%= f.label "avatar", (image_tag user.avatar.url(:thumb)) %>
-        <%= f.file_field :avatar, class: "avatar-upload-image" %>
+        <%= f.file_field :avatar, class: "avatar-upload-image img-circle" %>
       <% end %>
     </div>
     <!-- <a href="#" class="image-upload"><%= icon('file-image-o') %></a> -->
