@@ -18,3 +18,11 @@
 <div class="col-xs-3 feed__sidebar">
   <%= render partial: "sidebar", locals: {user: current_user} %>
 </div>
+
+<script>
+  (function() {
+    $('.avatar-upload-image').change(function() {
+      $('.avatar-form').submit();
+    });
+  })()
+</script>

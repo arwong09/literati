@@ -2,8 +2,18 @@
   <%= link_to icon('pencil'), new_user_post_url(user) %>
   <%= link_to icon('smile-o'), session_url, method: "delete" %>
   <div class="profile">
-    <%= icon('user') %>
-    <a href="#" class="image-upload"><%= icon('file-image-o') %></a>
+    <div class="avatar">
+      <% if user.avatar.url %>
+
+      <% else %>
+        <%= icon('user') %>
+      <% end %>
+      <%= form_for user, html: { class: "avatar-form" } do |f| %>
+        <%= f.label "avatar", (image_tag user.avatar.url(:thumb)) %>
+        <%= f.file_field :avatar, class: "avatar-upload-image" %>
+      <% end %>
+    </div>
+    <!-- <a href="#" class="image-upload"><%= icon('file-image-o') %></a> -->
     <h3><%= user.first_name %> <%= user.last_name %></h3>
   </div>
   <%= link_to "new post", new_user_post_url(user) %>

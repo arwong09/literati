@@ -18,6 +18,7 @@ gem 'bcrypt'
 gem 'font-awesome-sass'
 gem 'backbone-marionette-rails'
 gem 'google-webfonts-rails'
+gem 'paperclip'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -20,10 +20,9 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     
     if user.update_attributes(user_params)
-      redirect_to user_url(user)
+      redirect_to posts_url
     else
       flash.now[:errors] = user.errors.full_messages
-      render :edit
     end
   end
 
@@ -42,6 +41,6 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:username, :password, :email, :first_name, :last_name)
+    params.require(:user).permit(:username, :password, :email, :first_name, :last_name, :avatar)
   end
 end
